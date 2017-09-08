@@ -12,9 +12,20 @@ fi
 # create the symbolic link for the i3 config
 echo "Checking i3 config directory ..."
 i3_config_directory=`pwd`/.config/i3
-if [ ! -d $i3_config_directory ]; then
+if [ ! -L $i3_config_directory ]; then
     ln -s $i3_config_directory ~/.config/i3
     echo "created"
 else
     echo "exists"
 fi
+
+# create the symbolic link for the terminator config
+echo "Checking terminator config directory ..."
+terminator_config_directory=`pwd`/.config/terminator
+if [ ! -L $terminator_config_directory ]; then
+    ln -s $terminator_config_directory ~/.config/terminator
+    echo "created"
+else
+    echo "exists"
+fi
+
