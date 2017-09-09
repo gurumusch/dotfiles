@@ -18,7 +18,7 @@ font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+#font pango:Inconsolata for Powerline Mono 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -178,13 +178,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set debuglog on
+#set debuglog on
 
 # i3-gaps stuff :)
 gaps inner 15
 gaps outer 0
 smart_borders on
-smart_gaps on
+#smart_gaps on
 
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
@@ -206,6 +206,8 @@ bar {
         id bar-3
 	position top
 	tray_output primary
+	#font pango:"DejaVu Sans Mono for Powerline" 10
+	font pango:"Inconsolata for Powerline" 10
 	status_command bumblebee-status -m nic cpu battery date time pasink -d -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t powerline
 	#status_command bumblebee-status -m nic disk:root cpu memory battery date time pasink -d -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t powerline
 	colors {
@@ -221,7 +223,7 @@ bar {
 # Meine Änderungen
 #exec --no-startup-id feh --bg-scale ~/Bilder/darth-vader.jpg
 #exec --no-startup-id feh --bg-scale ~/Bilder/stausee-in-den-bergen.jpg
-exec --no-startup-id feh --bg-scale ~/Bilder/wasserfall-in-den-bergen.jpg
+exec --no-startup-id feh --bg-scale ~/Bilder/wallpaper.jpg
 #exec --no-startup-id compton --config ~/.config/compton.conf
 exec --no-startup-id nm-applet
 exec compton --config ~/.config/compton.conf
