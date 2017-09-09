@@ -29,3 +29,12 @@ else
     echo "exists"
 fi
 
+# create the symbolic link for the compton config
+echo "Checking compton config file ..."
+compton_config_file=`pwd`/.config/compton.conf
+if [ ! -L $compton_config_file ]; then
+    ln -s $compton_config_file ~/.config/compton.conf
+    echo "created"
+else
+    echo "exists"
+fi
