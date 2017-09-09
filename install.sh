@@ -32,9 +32,39 @@ fi
 # create the symbolic link for the compton config
 echo "Checking compton config file ..."
 compton_config_file=`pwd`/.config/compton.conf
-if [ ! -L $compton_config_file ] && [ ! -f $compton_config_file]; then
+if [ ! -L $compton_config_file ] && [ ! -f $compton_config_file ]; then
     ln -s $compton_config_file ~/.config/compton.conf
     echo "created"
 else
     echo "exists"
 fi
+
+# create the symbolic link for the vim config
+echo "Checking vim config file ..."
+vim_config_file=`pwd`/.vimrc
+if [ ! -L $vim_config_file ] && [ ! -f $vim_config_file ]; then
+    ln -s $vim_config_file ~/.vimrc
+    echo "created"
+else
+    echo "exists"
+fi
+
+# ensure the bin folder exists
+echo "Checking bin directory ..."
+if [ ! -d ~/bin ]; then
+    mkdir ~/bin
+    echo "created"
+else
+    echo "exists"
+fi
+
+# create the symbolic link for the compton config
+echo "Checking lock script ..."
+compton_config_file=`pwd`/bin/lock.sh
+if [ ! -L $compton_config_file ] && [ ! -f $compton_config_file ]; then
+    ln -s $compton_config_file ~/bin/lock.sh
+    echo "created"
+else
+    echo "exists"
+fi
+
