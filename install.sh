@@ -10,41 +10,56 @@ else
 fi
 
 # create the symbolic link for the i3 config
-echo "Checking i3 config directory ..."
-i3_config_directory=`pwd`/.config/i3
-if [ ! -L $i3_config_directory ] && [ ! -d $i3_config_directory ]; then
-    ln -s $i3_config_directory ~/.config/i3
-    echo "created"
+config_in_home=~/.config/i3
+config=`pwd`/.config/i3
+echo "Checking i3 config directory (${config_in_home}) ..."
+if [ ! -L $config_in_home ] && [ ! -d $config_in_home ]; then
+    ln -s $config $config_in_home
+    echo "created link: ${config_in_home} -> ${config}"
 else
     echo "exists"
 fi
 
 # create the symbolic link for the terminator config
-echo "Checking terminator config directory ..."
-terminator_config_directory=`pwd`/.config/terminator
-if [ ! -L $terminator_config_directory ] && [ ! -d $terminator_config_directory ]; then
-    ln -s $terminator_config_directory ~/.config/terminator
-    echo "created"
+config_in_home=~/.config/rofi
+config=`pwd`/.config/rofi
+echo "Checking terminator config directory (${config_in_home}) ..."
+if [ ! -L $config_in_home ] && [ ! -d $config_in_home ]; then
+    ln -s $config $config_in_home
+    echo "created link: ${config_in_home} -> ${config}"
+else
+    echo "exists"
+fi
+
+# create the symbolic link for the terminator config
+config_in_home=~/.config/terminator
+config=`pwd`/.config/terminator
+echo "Checking terminator config directory (${config_in_home}) ..."
+if [ ! -L $config_in_home ] && [ ! -d $config_in_home ]; then
+    ln -s $config $config_in_home
+    echo "created link: ${config_in_home} -> ${config}"
 else
     echo "exists"
 fi
 
 # create the symbolic link for the compton config
-echo "Checking compton config file ..."
-compton_config_file=`pwd`/.config/compton.conf
-if [ ! -L $compton_config_file ] && [ ! -f $compton_config_file ]; then
-    ln -s $compton_config_file ~/.config/compton.conf
-    echo "created"
+config_in_home=~/.config/compton.conf
+config=`pwd`/.config/compton.conf
+echo "Checking compton config file (${config_in_home}) ..."
+if [ ! -L $config_in_home ] && [ ! -d $config_in_home ]; then
+    ln -s $config $config_in_home
+    echo "created link: ${config_in_home} -> ${config}"
 else
     echo "exists"
 fi
 
 # create the symbolic link for the vim config
-echo "Checking vim config file ..."
-vim_config_file=`pwd`/.vimrc
-if [ ! -L $vim_config_file ] && [ ! -f $vim_config_file ]; then
-    ln -s $vim_config_file ~/.vimrc
-    echo "created"
+config_in_home=~/.vimrc
+config=`pwd`/.vimrc
+echo "Checking vim config file (${config_in_home}) ..."
+if [ ! -e $config_in_home ]; then
+    ln -s $config $config_in_home
+    echo "created link: ${config_in_home} -> ${config}"
 else
     echo "exists"
 fi
@@ -58,12 +73,13 @@ else
     echo "exists"
 fi
 
-# create the symbolic link for the compton config
-echo "Checking lock script ..."
-compton_config_file=`pwd`/bin/lock.sh
-if [ ! -L $compton_config_file ] && [ ! -f $compton_config_file ]; then
-    ln -s $compton_config_file ~/bin/lock.sh
-    echo "created"
+# create the symbolic link for the lock script
+script_in_home=~/bin/lock.sh
+script=`pwd`/bin/lock.sh
+echo "Checking lock script (${script_in_home}) ..."
+if [ ! -L $script_in_home ] && [ ! -f $script_in_home ]; then
+    ln -s $script $script_in_home
+    echo "created link: ${script_in_home} -> ${script}"
 else
     echo "exists"
 fi

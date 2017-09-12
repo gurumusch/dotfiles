@@ -1,5 +1,7 @@
 [global_config]
 [keybindings]
+  copy = <Primary>c
+  paste = <Primary>v
 [layouts]
   [[default]]
     [[[child1]]]
