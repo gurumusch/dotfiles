@@ -18,7 +18,11 @@ map <right> :echoerr "Stop being stupid. Use l"<CR>
 " map <right> <nop>
 
 " Disable Arrow keys in Insert mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+imap <up> :echoerr "Stop being stupid. Use k"<CR>
+imap <down> :echoerr "Stop being stupid. Use j"<CR>
+imap <left> :echoerr "Stop being stupid. Use h"<CR>
+imap <right> :echoerr "Stop being stupid. Use l"<CR>
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
