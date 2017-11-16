@@ -33,7 +33,7 @@
    font-4 = "Noto Sans:size=11;1"
    ; modules
    modules-left = i3
-   modules-center = battery0 battery1 backlight wireless-network temperature cpu memory volume
+   modules-center = battery0 battery1 wireless-network memory cpu temperature backlight volume
    modules-right = date powermenu
 
 ;--------------------
@@ -130,10 +130,19 @@
 ;--------------------
 [module/memory]
    type = internal/memory
-   format = " <label>"
+   format = " <label> <bar-used>"
    format-underline = ${colors.underline}
-   label = %gb_used%/%gb_free%
+   label = "%percentage_used% %"
    label-padding = 0
+   bar-used-indicator =
+   bar-used-width = 5
+   bar-used-foreground-0 = #55aa55
+   bar-used-foreground-1 = #557755
+   bar-used-foreground-2 = #f5a70a
+   bar-used-foreground-3 = #ff5555
+   bar-used-fill = ▐
+   bar-used-empty = ▐
+   bar-used-empty-foreground = #444444
 
 ;--------------------
 ; cpu load
@@ -160,7 +169,7 @@
    interval = 0.5
    thermal-zone = 0
    warn-temperature = 60
-   format = " <label> <ramp>"
+   format = " <label>"
    format-underline = ${colors.underline}
    label = %temperature%
    label-padding = 0

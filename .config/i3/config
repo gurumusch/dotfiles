@@ -194,18 +194,20 @@ for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -name dropdown -e tmux
 
-bindsym $mod+t			[instance="dropdown"] scratchpad show; move position center
-bindsym $mod+Shift+t		resize shrink height 10 px or 10 ppt
-
-
-
-
-exec --no-startup-id feh --bg-scale ~/Bilder/wallpaper/wallpaper.jpg
-
+exec --no-startup-id feh --bg-scale ~/Bilder/wallpaper/wallpaper-see.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id compton -f --config ~/.config/compton.conf
-
 exec --no-startup-id polybar.sh
+
+exec --no-startup-id i3-msg 'workspace $ws10; exec terminator'
+exec --no-startup-id i3-msg 'workspace $ws1; exec chromium-browser'
+#exec --no-startup-id chromium-browser
+
+#
+# Bindings
+#
+bindsym $mod+t			[instance="dropdown"] scratchpad show; move position center
+bindsym $mod+Shift+t		resize shrink height 10 px or 10 ppt
 
 bindsym XF86AudioRaiseVolume exec amixer set Master -q 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer set Master -q 5%-
@@ -221,7 +223,7 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+shift+x exec lock.sh
 
 bindsym $mod+w exec chromium-browser
-bindsym $mod+e exec chromium-browser --incofnito
+#bindsym $mod+e exec chromium-browser --incofnito
 bindsym $mod+c exec code
 #bindsym $mod+g exec virt-manager --connect qemu:///session
 #bindsym $mod+g floating toggle; [floating] border normal 0; [tiling] border pixel 0
@@ -229,3 +231,4 @@ bindsym $mod+g gaps inner current set 0; gaps outer current set 0
 bindsym $mod+Shift+g gaps inner current set 15; gaps outer current set 0
 
 bindsym $mod+x debuglog toggle
+
