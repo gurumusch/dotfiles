@@ -1,7 +1,11 @@
 rofi.lines: 5
-rofi.width: 100
-rofi.padding: 800
+rofi.modi: combi,drun
+rofi.combi-modi: window,drun
+rofi.theme: ~/.config/rofi/theme.rasi
+rofi.fullscreen: true
+rofi.padding: 400
 rofi.opacity: 75
 
+rofi.font: "System San Francisco Display" 14
 rofi.bw: 0
 rofi.bg: #992f343f
