@@ -2,8 +2,12 @@
 ; colors
 ;--------------------
 [colors]
-   background = #55000000
-   foreground = #ffffff
+   background = #ee002b37
+   foreground = #819396
+   active-foreground = #008ed4
+   selected-urgent-foreground = #da4281
+   selected-active-foreground = #008ed4
+   alternate-urgent-foreground = #008ed4
    foreground-inactive = #888888
    foreground-alt = #555
    primary = #ffb52a
@@ -15,19 +19,26 @@
 ;--------------------
 ; my top bar
 ;--------------------
-[bar/topbar]
+[bar/top]
    width=100%
+   height = 27
+   radius = 6
+   border-size = 3
+   border-color = #00000000
    foreground = ${colors.foreground}
-   background=#88000000
+   background= ${colors.background}
    underline-size = 3
-   underline-color = ${colors.underline}
+   underline-color = ${colors.active-foreground}
    spacing = 0
    line-height = 2
-   padding = 0
+
+   padding-left = 0
+   padding-right = 2
+
    module-margin = 2
    ; fonts
    font-0 = "Inconsolata for Powerline:size=12"
-   font-1 = "FontAwesome:size=12"
+   font-1 = "FontAwesome:pixelsize=10pppp;0"
    font-2 = "Tamsyn:pixelsize=12;0"
    font-3 = "Roboto:size=11:weight=bold;2"
    font-4 = "Noto Sans:size=11;1"
@@ -57,7 +68,7 @@
    ; focused - active workspace on focused monitor
    label-focused-foreground = ${colors.foreground}
    label-focused-padding = 1
-   label-focused-underline = ${colors.underline}
+   label-focused-underline = ${colors.active-foreground}
    ; urgent - workspace with urgency hint set
    label-urgent-padding = 1
    label-urgent-foreground = #ff0000
@@ -69,13 +80,13 @@
 [module/date]
    type = internal/date
    interval = 5
-   format-underline = ${colors.underline}
+   format-underline = ${colors.active-foreground}
    date = "%d.%m.%y"
 ;   date-alt = " %d"
    time = " %H:%M"
 ;   time-alt =  %H:%M
 ;   label = %date% %time%
-   format = " <label>"
+   format = " <label>"
    label = %time%
 
 ;--------------------
@@ -83,7 +94,7 @@
 ;--------------------
 [module/volume]
    type = internal/volume
-   format-volume-underline = ${colors.underline}
+   format-volume-underline = ${colors.active-foreground}
    format-volume = "<ramp-volume> <label-volume> <bar-volume>"
    label-volume = "%percentage% %"
    label-volume-foreground = ${root.foreground}
@@ -116,12 +127,12 @@
 [module/wireless-network]
    type = internal/network
    interface = "wlp3s0"
-   format-connected-underline = ${colors.underline}
-   label-connected = " %essid%: %local_ip%"
-;   label-connected = " %downspeed%  %upspeed% "
+   format-connected-underline = ${colors.active-foreground}
+   ;label-connected = " %essid%: %local_ip%"
+   label-connected = " %essid%"
 
    format-disconnected = <label-disconnected>
-   format-disconnected-underline = ${colors.underline}
+   format-disconnected-underline = ${colors.active-foreground}
    label-disconnected = " Nicht verbunden"
    label-disconnected-foreground = ${colors.alert}
 
@@ -131,7 +142,7 @@
 [module/memory]
    type = internal/memory
    format = " <label> <bar-used>"
-   format-underline = ${colors.underline}
+   format-underline = ${colors.active-foreground}
    label = "%percentage_used% %"
    label-padding = 0
    bar-used-indicator =
@@ -150,7 +161,7 @@
 [module/cpu]
    type = internal/cpu
    format = " <label> <ramp-coreload>"
-   format-underline = ${colors.underline}
+   format-underline = ${colors.active-foreground}
    label = %percentage% %
    ramp-coreload-0 = ▁
    ramp-coreload-1 = ▂
@@ -170,7 +181,7 @@
    thermal-zone = 0
    warn-temperature = 60
    format = " <label>"
-   format-underline = ${colors.underline}
+   format-underline = ${colors.active-foreground}
    label = %temperature%
    label-padding = 0
    ramp-0 = ▁
@@ -189,7 +200,7 @@
    type = internal/backlight
    card = intel_backlight
    format = " <label>"
-   format-underline = ${colors.underline}
+   format-underline = ${colors.active-foreground}
    ramp-0 = 🌕
    ramp-1 = 🌔
    ramp-2 = 🌓
@@ -204,13 +215,13 @@
    battery = BAT0
    adapter = AC
    time-format = %H:%M
-   format-charging-underline = ${colors.underline}
+   format-charging-underline = ${colors.active-foreground}
    format-charging = " <animation-charging> BAT0: <label-charging>"
    label-charging = "%percentage% % (%consumption% W)"
-   format-discharging-underline = ${colors.underline}
+   format-discharging-underline = ${colors.active-foreground}
    format-discharging = "<ramp-capacity> BAT0: <label-discharging>"
    label-discharging = "%percentage% % (%consumption% W)"
-   format-full-underline = ${colors.underline}
+   format-full-underline = ${colors.active-foreground}
    format-full = " BAT0: <label-full>"
    label-full = "%percentage% %"
    ramp-capacity-0 = 
@@ -233,13 +244,13 @@
    battery = BAT1
    adapter = AC
    time-format = %H:%M
-   format-charging-underline = ${colors.underline}
+   format-charging-underline = ${colors.active-foreground}
    format-charging = " <animation-charging> BAT1: <label-charging>"
    label-charging = "%percentage% % (%consumption% W)"
-   format-discharging-underline = ${colors.underline}
+   format-discharging-underline = ${colors.active-foreground}
    format-discharging = "<ramp-capacity> BAT1: <label-discharging>"
    label-discharging = "%percentage% % (%consumption% W)"
-   format-full-underline = ${colors.underline}
+   format-full-underline = ${colors.active-foreground}
    format-full = " BAT1: <label-full>"
    label-full = "%percentage% %"
    ramp-capacity-0 = 
@@ -261,9 +272,9 @@
    type = custom/menu
 
    format-spacing = 1
-   format-underline = ${colors.underline}
+   format-underline = ${colors.active-foreground}
 
-   label-open = " Beenden"
+   label-open = ""
 ;   label-open-foreground = ${colors.secondary}
    label-close = "Zurück"
 ;   label-close-foreground = ${colors.secondary}

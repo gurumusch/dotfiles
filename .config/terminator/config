@@ -1,4 +1,5 @@
 [global_config]
+  hide_on_lose_focus = True
 [keybindings]
   copy = <Primary>c
   paste = <Primary>v

@@ -20,10 +20,21 @@ else
     echo "exists"
 fi
 
-# create the symbolic link for the terminator config
+# create the symbolic link for the rofi config
 config_in_home=~/.config/rofi
 config=`pwd`/.config/rofi
-echo "Checking terminator config directory (${config_in_home}) ..."
+echo "Checking rofi config directory (${config_in_home}) ..."
+if [ ! -L $config_in_home ] && [ ! -d $config_in_home ]; then
+    ln -s $config $config_in_home
+    echo "created link: ${config_in_home} -> ${config}"
+else
+    echo "exists"
+fi
+
+# create the symbolic link for the polybar config
+config_in_home=~/.config/polybar
+config=`pwd`/.config/polybar
+echo "Checking polybar config directory (${config_in_home}) ..."
 if [ ! -L $config_in_home ] && [ ! -d $config_in_home ]; then
     ln -s $config $config_in_home
     echo "created link: ${config_in_home} -> ${config}"
