@@ -64,6 +64,17 @@ else
     echo "exists"
 fi
 
+# create the symbolic link for the vim config
+config_in_home=~/.vim
+config=`pwd`/.vim
+echo "Checking vim config folder (${config_in_home}) ..."
+if [ ! -e $config_in_home ]; then
+    ln -s $config $config_in_home
+    echo "created link: ${config_in_home} -> ${config}"
+else
+    echo "exists"
+fi
+
 # ensure the bin folder exists
 echo "Checking bin directory ..."
 if [ ! -d ~/bin ]; then
@@ -77,6 +88,17 @@ fi
 script_in_home=~/bin/lock.sh
 script=`pwd`/bin/lock.sh
 echo "Checking lock script (${script_in_home}) ..."
+if [ ! -L $script_in_home ] && [ ! -f $script_in_home ]; then
+    ln -s $script $script_in_home
+    echo "created link: ${script_in_home} -> ${script}"
+else
+    echo "exists"
+fi
+
+# create the symbolic link for the polybar script
+script_in_home=~/bin/polybar.sh
+script=`pwd`/bin/polybar.sh
+echo "Checking polybar script (${script_in_home}) ..."
 if [ ! -L $script_in_home ] && [ ! -f $script_in_home ]; then
     ln -s $script $script_in_home
     echo "created link: ${script_in_home} -> ${script}"
