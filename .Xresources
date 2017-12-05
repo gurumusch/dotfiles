@@ -1,0 +1,21 @@
+# the color theme
+# for more info about solarized themes visit: http://ethanschoonover.com/solarized
+*Theme.base03:     #002b36
+*Theme.base02:     #073642
+*Theme.base01:     #586e75
+*Theme.base00:     #657b83
+
+*Theme.base0:      #839496
+*Theme.base1:      #93a1a1
+*Theme.base2:      #eee8d5
+*Theme.base3:      #fdf6e3
+
+*Theme.yellow:     #b58900
+*Theme.orange:     #cb4b16
+*Theme.red:        #dc322f
+*Theme.magenta:    #d33682
+*Theme.violet:     #6c71c4
+*Theme.blue:       #268bd2
+*Theme.cyan:       #2aa198
+*Theme.green:      #859900
+

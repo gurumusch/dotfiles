@@ -65,6 +65,17 @@ else
 fi
 
 # create the symbolic link for the vim config
+config_in_home=~/.Xresources
+config=`pwd`/.Xresources
+echo "Checking x resources config file (${config_in_home}) ..."
+if [ ! -e $config_in_home ]; then
+    ln -s $config $config_in_home
+    echo "created link: ${config_in_home} -> ${config}"
+else
+    echo "exists"
+fi
+
+# create the symbolic link for the vim config
 config_in_home=~/.vimrc
 config=`pwd`/.vimrc
 echo "Checking vim config file (${config_in_home}) ..."
