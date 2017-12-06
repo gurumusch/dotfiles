@@ -16,6 +16,9 @@
    separator = #cccc00
    underline = #cc6600
 
+[solarized]
+   include-file = ~/.config/polybar/solarized-dark
+
 ;--------------------
 ; my top bar
 ;--------------------
@@ -25,10 +28,10 @@
    radius = 6
    border-size = 3
    border-color = #00000000
-   foreground = ${colors.foreground}
-   background= ${colors.background}
+   foreground = ${solarized.primaryContent}
+   background= ${solarized.background}
    underline-size = 3
-   underline-color = ${colors.active-foreground}
+   underline-color = ${solarized.green}
    spacing = 0
    line-height = 2
 
@@ -58,21 +61,21 @@
    strip-wsnumbers = true
    pin-workspaces = true
    label-mode-padding = 5
-   label-mode-foreground = #ffffff
+   label-mode-foreground = ${solarized.secondaryContent}
    ; unfocused - Inactive workspace in any monitor
-   label-unfocused-foreground = #888888
+   label-unfocused-foreground = ${solarized.secondaryContent}
    label-unfocused-padding = 1
    ; visible - active workspace in any monitor
-   label-visible-foregroud = #888888
+   label-visible-foregroud = ${solarized.secondaryContent}
    label-visible-padding = 1
    ; focused - active workspace on focused monitor
-   label-focused-foreground = ${colors.foreground}
+   label-focused-foreground = ${solarized.emphasizedContent}
    label-focused-padding = 1
-   label-focused-underline = ${colors.active-foreground}
+   label-focused-underline = ${solarized.green}
    ; urgent - workspace with urgency hint set
    label-urgent-padding = 1
-   label-urgent-foreground = #ff0000
-   label-urgent-underline = #ff0000
+   label-urgent-foreground = ${solarized.emphasizedContent}
+   label-urgent-underline = ${solarized.orange}
 
 ;--------------------
 ; date module
@@ -80,7 +83,8 @@
 [module/date]
    type = internal/date
    interval = 5
-   format-underline = ${colors.active-foreground}
+   format-underline = ${solarized.green}
+   format-padding = 1
    date = "%d.%m.%y"
 ;   date-alt = " %d"
    time = " %H:%M"
@@ -94,32 +98,21 @@
 ;--------------------
 [module/volume]
    type = internal/volume
-   format-volume-underline = ${colors.active-foreground}
-   format-volume = "<ramp-volume> <label-volume> <bar-volume>"
+
+   format-muted = " <label-muted>"
+   format-muted-foreground = ${solarized.red}
+   format-muted-underline = ${solarized.red}
+   label-muted = "%percentage% %"
+   label-muted-foreground = ${solarized.secondaryContent}
+   
+   format-volume = "<ramp-volume> <label-volume>"
+   format-volume-underline = ${solarized.green}
    label-volume = "%percentage% %"
-   label-volume-foreground = ${root.foreground}
-   format-muted = " stumm <bar-volume>"
-   label-muted = ""
+   label-volume-foreground = ${solarized.primaryContent}
+
    ramp-volume-0 = ""
    ramp-volume-1 = ""
    ramp-volume-2 = ""
-   bar-volume-width = 10
-   bar-volume-foreground-0 = #55aa55
-   bar-volume-foreground-1 = #55aa55
-   bar-volume-foreground-2 = #55aa55
-   bar-volume-foreground-3 = #55aa55
-   bar-volume-foreground-4 = #55aa55
-   bar-volume-foreground-5 = #f5a70a
-   bar-volume-foreground-6 = #ff5555
-   bar-volume-gradient = false
-   bar-volume-indicator = │
-   bar-volume-indicator-font = 2
-   bar-volume-indicator-foreground = #ff
-   bar-volume-fill = ─
-   bar-volume-fill-font = 2
-   bar-volume-empty = ─
-   bar-volume-empty-font = 2
-   bar-volume-empty-foreground =
 
 ;--------------------
 ; wireless settings
@@ -199,8 +192,8 @@
 [module/backlight]
    type = internal/backlight
    card = intel_backlight
-   format = " <label>"
-   format-underline = ${colors.active-foreground}
+   format = "<label>"
+   format-underline = ${solarized.green}
    ramp-0 = 🌕
    ramp-1 = 🌔
    ramp-2 = 🌓
@@ -271,29 +264,28 @@
 [module/powermenu]
    type = custom/menu
 
-   format-spacing = 1
-   format-underline = ${colors.active-foreground}
+   format-underline = ${solarized.orange}
+   format-background = ${solarized.backgroundHighlights}
 
-   label-open = ""
-;   label-open-foreground = ${colors.secondary}
-   label-close = "Zurück"
-;   label-close-foreground = ${colors.secondary}
-   label-separator = 
-;   label-separator-foreground = ${colors.separator}
-   label-separator-foreground = #ffcc00
+   label-open = "  "
+   label-open-foreground = ${solarized.primaryContent}
+   label-open-underline = ${solarized.orange}
+   label-close = " Zurück"
+   label-separator = "  "
+   label-separator-foreground = ${solarized.orange}
    
-   menu-0-0 = Neu starten
+   menu-0-0 = "Neu starten"
    menu-0-0-exec = menu-open-1
-   menu-0-1 = Herunterfahren
+   menu-0-1 = "Herunterfahren "
    menu-0-1-exec = menu-open-2
    
-   menu-1-0 = Zurück
+   menu-1-0 = "Zurück"
    menu-1-0-exec = menu-open-0
-   menu-1-1 = Neu starten
+   menu-1-1 = "Neu starten "
    menu-1-1-exec = sudo reboot
    
-   menu-2-0 = Zurück
+   menu-2-0 = "Zurück"
    menu-2-0-exec = menu-open-0
-   menu-2-1 = Herunterfahren
+   menu-2-1 = "Herunterfahren "
    menu-2-1-exec = sudo poweroff
 
