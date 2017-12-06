@@ -120,14 +120,14 @@
 [module/wireless-network]
    type = internal/network
    interface = "wlp3s0"
-   format-connected-underline = ${colors.active-foreground}
-   ;label-connected = " %essid%: %local_ip%"
-   label-connected = " %essid%"
+   format-connected = " <label-connected>"
+   format-connected-underline = ${solarized.green}
+   label-connected = "%essid%"
 
-   format-disconnected = <label-disconnected>
-   format-disconnected-underline = ${colors.active-foreground}
-   label-disconnected = " Nicht verbunden"
-   label-disconnected-foreground = ${colors.alert}
+   format-disconnected = " <label-disconnected>"
+   format-disconnected-underline = ${solarized.red}
+   label-disconnected = "Nicht verbunden"
+   label-disconnected-foreground = ${solarized.primaryContent}
 
 ;--------------------
 ; memory usage
@@ -135,18 +135,20 @@
 [module/memory]
    type = internal/memory
    format = " <label> <bar-used>"
-   format-underline = ${colors.active-foreground}
+   format-underline = ${solarized.green}
    label = "%percentage_used% %"
    label-padding = 0
    bar-used-indicator =
-   bar-used-width = 5
-   bar-used-foreground-0 = #55aa55
-   bar-used-foreground-1 = #557755
-   bar-used-foreground-2 = #f5a70a
-   bar-used-foreground-3 = #ff5555
+   bar-used-width = 6
+   bar-used-foreground-0 = ${solarized.green}
+   bar-used-foreground-1 = ${solarized.cyan}
+   bar-used-foreground-2 = ${solarized.blue}
+   bar-used-foreground-3 = ${solarized.violet}
+   bar-used-foreground-4 = ${solarized.magenta}
+   bar-used-foreground-5 = ${solarized.red}
    bar-used-fill = ▐
    bar-used-empty = ▐
-   bar-used-empty-foreground = #444444
+   bar-used-empty-foreground = ${solarized.secondaryContent}
 
 ;--------------------
 ; cpu load
@@ -154,16 +156,24 @@
 [module/cpu]
    type = internal/cpu
    format = " <label> <ramp-coreload>"
-   format-underline = ${colors.active-foreground}
+   format-underline = ${solarized.green}
    label = %percentage% %
    ramp-coreload-0 = ▁
+   ramp-coreload-0-foreground = ${solarized.green}
    ramp-coreload-1 = ▂
+   ramp-coreload-1-foreground = ${solarized.green}
    ramp-coreload-2 = ▃
+   ramp-coreload-2-foreground = ${solarized.cyan}
    ramp-coreload-3 = ▄
+   ramp-coreload-3-foreground = ${solarized.cyan}
    ramp-coreload-4 = ▅
+   ramp-coreload-4-foreground = ${solarized.blue}
    ramp-coreload-5 = ▆
+   ramp-coreload-5-foreground = ${solarized.violet}
    ramp-coreload-6 = ▇
+   ramp-coreload-6-foreground = ${solarized.magenta}
    ramp-coreload-7 = █
+   ramp-coreload-7-foreground = ${solarized.red}
 
 ;--------------------
 ; cpu temperature
@@ -172,19 +182,36 @@
    type = internal/temperature
    interval = 0.5
    thermal-zone = 0
-   warn-temperature = 60
+   warn-temperature = 50
+
    format = " <label>"
-   format-underline = ${colors.active-foreground}
+   format-underline = ${solarized.green}
    label = %temperature%
    label-padding = 0
+
+   format-warn = " <label-warn>"
+   format-warn-underline = ${solarized.green}
+   format-warn-foreground = ${solarized.red}
+   label-warn = %temperature%
+   label-warn-padding = 0
+   label-warn-foreground = ${solarized.secondaryContent}
+
    ramp-0 = ▁
+   ramp-0-foreground = ${solarized.green}
    ramp-1 = ▂
+   ramp-1-foreground = ${solarized.green}
    ramp-2 = ▃
+   ramp-2-foreground = ${solarized.cyan}
    ramp-3 = ▄
+   ramp-3-foreground = ${solarized.cyan}
    ramp-4 = ▅
+   ramp-4-foreground = ${solarized.blue}
    ramp-5 = ▆
+   ramp-5-foreground = ${solarized.violet}
    ramp-6 = ▇
+   ramp-6-foreground = ${solarized.magenta}
    ramp-7 = █
+   ramp-7-foreground = ${solarized.red}
 
 ;--------------------
 ; backlight
@@ -192,7 +219,7 @@
 [module/backlight]
    type = internal/backlight
    card = intel_backlight
-   format = "<label>"
+   format = " <label>"
    format-underline = ${solarized.green}
    ramp-0 = 🌕
    ramp-1 = 🌔
@@ -208,15 +235,20 @@
    battery = BAT0
    adapter = AC
    time-format = %H:%M
-   format-charging-underline = ${colors.active-foreground}
-   format-charging = " <animation-charging> BAT0: <label-charging>"
+   full-at = 98
+
+   format-charging-underline = ${solarized.green}
+   format-charging = " <animation-charging> <label-charging>"
    label-charging = "%percentage% % (%consumption% W)"
-   format-discharging-underline = ${colors.active-foreground}
-   format-discharging = "<ramp-capacity> BAT0: <label-discharging>"
+
+   format-discharging-underline = ${solarized.green}
+   format-discharging = "<ramp-capacity> <label-discharging>"
    label-discharging = "%percentage% % (%consumption% W)"
-   format-full-underline = ${colors.active-foreground}
-   format-full = " BAT0: <label-full>"
+
+   format-full-underline = ${solarized.green}
+   format-full = " <label-full>"
    label-full = "%percentage% %"
+
    ramp-capacity-0 = 
    ramp-capacity-1 = 
    ramp-capacity-2 = 
@@ -237,15 +269,20 @@
    battery = BAT1
    adapter = AC
    time-format = %H:%M
-   format-charging-underline = ${colors.active-foreground}
-   format-charging = " <animation-charging> BAT1: <label-charging>"
+   full-at = 98
+
+   format-charging-underline = ${solarized.green}
+   format-charging = " <animation-charging> <label-charging>"
    label-charging = "%percentage% % (%consumption% W)"
-   format-discharging-underline = ${colors.active-foreground}
-   format-discharging = "<ramp-capacity> BAT1: <label-discharging>"
+
+   format-discharging-underline = ${solarized.green}
+   format-discharging = "<ramp-capacity> <label-discharging>"
    label-discharging = "%percentage% % (%consumption% W)"
-   format-full-underline = ${colors.active-foreground}
-   format-full = " BAT1: <label-full>"
+
+   format-full-underline = ${solarized.green}
+   format-full = " <label-full>"
    label-full = "%percentage% %"
+
    ramp-capacity-0 = 
    ramp-capacity-1 = 
    ramp-capacity-2 = 

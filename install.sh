@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+current_directory=`pwd`
+
 # ensure the .config folder exists
 echo "Checking .config directory ..."
 if [ ! -d ~/.config ]; then
@@ -128,3 +130,35 @@ else
     echo "exists"
 fi
 
+# ensure the .themes folder exists
+echo "Checking .themes directory ..."
+if [ ! -d ~/.themes ]; then
+    mkdir ~/.themes
+    echo "created"
+else
+    echo "exists"
+fi
+
+echo "Checking solarized gtk theme (${current_directory}/repos/solarized-dark-gtk) ..."
+if [ ! -d ~/repos/solarized-dark-gtk ]; then
+    cd ~/repos
+    git clone https://github.com/jankotek/solarized-dark-gtk.git
+    echo "updating theme"
+else
+    cd solarized-dark-gtk
+    git pull
+    echo updating theme
+fi
+
+# create the symbolic link for the gtk theme
+config_in_home=~/.themes/solarized-dark-gtk
+config=~/repos/solarized-dark-gtk
+echo "Checking vim config folder (${config_in_home}) ..."
+if [ ! -e $config_in_home ]; then
+    ln -s $config $config_in_home
+    echo "created link: ${config_in_home} -> ${config}"
+else
+    echo "exists"
+fi
+
+cd $current_directory
