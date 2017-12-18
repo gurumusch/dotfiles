@@ -237,6 +237,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 bindsym $mod+d exec rofi -show combi -config ~/.config/rofi/config
+#bindsym $mod+d exec rofi -show combi
 bindsym $mod+shift+x exec lock.sh
 
 bindsym $mod+w exec firefox

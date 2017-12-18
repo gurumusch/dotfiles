@@ -1,5 +1,5 @@
-# the color theme
-# for more info about solarized themes visit: http://ethanschoonover.com/solarized
+! the color theme
+! for more info about solarized themes visit: http://ethanschoonover.com/solarized
 *Theme.base03:     #002b36
 *Theme.base02:     #073642
 *Theme.base01:     #586e75
@@ -19,3 +19,27 @@
 *Theme.cyan:       #2aa198
 *Theme.green:      #859900
 
+! === rofi ===
+rofi.lines: 5
+rofi.modi: combi,drun
+rofi.combi-modi: window,drun
+rofi.fullscreen: true
+rofi.padding: 400
+rofi.opacity: 75
+
+rofi.font: "System San Francisco Display" 18
+
+rofi.fg:                             #5294E2
+rofi.bg:                             #5d729f
+rofi.fg-active:                      #34405a
+rofi.fg-urgent:                      #34405a
+rofi.hlfg-active:                    #5e73a0
+rofi.hlfg-urgent:                    #5e73a0
+rofi.bg-active:                      #34405a
+rofi.bg-urgent:                      #34405a
+rofi.hlbg-active:                    #5d729f
+rofi.hlbg-urgent:                    #5d729f
+rofi.bgalt:                          #5671a0
+rofi.hlfg:                           #34405a
+rofi.hlbg:                           #34405a
+rofi.bc: #789ee1

@@ -1,21 +1,6 @@
 ;--------------------
-; colors
+; include solarized theme
 ;--------------------
-[colors]
-   background = #ee002b37
-   foreground = #819396
-   active-foreground = #008ed4
-   selected-urgent-foreground = #da4281
-   selected-active-foreground = #008ed4
-   alternate-urgent-foreground = #008ed4
-   foreground-inactive = #888888
-   foreground-alt = #555
-   primary = #ffb52a
-   secondary = #e60053
-   alert = #bd2c40
-   separator = #cccc00
-   underline = #cc6600
-
 [solarized]
    include-file = ~/.config/polybar/solarized-dark
 
@@ -64,18 +49,21 @@
    label-mode-foreground = ${solarized.secondaryContent}
    ; unfocused - Inactive workspace in any monitor
    label-unfocused-foreground = ${solarized.secondaryContent}
+   label-unfocused-background = ${solarized.backgroundHighlights}
+   label-unfocused-underline = ${solarized.secondaryContent}
    label-unfocused-padding = 1
    ; visible - active workspace in any monitor
    label-visible-foregroud = ${solarized.secondaryContent}
    label-visible-padding = 1
    ; focused - active workspace on focused monitor
    label-focused-foreground = ${solarized.emphasizedContent}
+   label-focused-background = ${solarized.backgroundHighlights}
    label-focused-padding = 1
    label-focused-underline = ${solarized.green}
    ; urgent - workspace with urgency hint set
    label-urgent-padding = 1
-   label-urgent-foreground = ${solarized.emphasizedContent}
-   label-urgent-underline = ${solarized.orange}
+   label-urgent-foreground = ${solarized.orange}
+   label-urgent-underline = ${solarized.secondaryContent}
 
 ;--------------------
 ; date module

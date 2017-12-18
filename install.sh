@@ -139,11 +139,12 @@ else
     echo "exists"
 fi
 
+# get the gtk theme
 echo "Checking solarized gtk theme (${current_directory}/repos/solarized-dark-gtk) ..."
 if [ ! -d ~/repos/solarized-dark-gtk ]; then
     cd ~/repos
     git clone https://github.com/jankotek/solarized-dark-gtk.git
-    echo "updating theme"
+    echo "updating gtk theme"
 else
     cd solarized-dark-gtk
     git pull
@@ -160,5 +161,7 @@ if [ ! -e $config_in_home ]; then
 else
     echo "exists"
 fi
+
+# todo: need to ensure oh-my-zsh to be installed
 
 cd $current_directory
