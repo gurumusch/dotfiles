@@ -218,9 +218,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id compton -f --config ~/.config/compton.conf
 exec --no-startup-id polybar.sh
 
-exec --no-startup-id i3-msg 'workspace $ws10; exec terminator'
-exec --no-startup-id i3-msg 'workspace $ws1; exec chromium-browser'
-#exec --no-startup-id chromium-browser
+exec i3-msg 'workspace $ws10; exec terminator'
+exec i3-msg 'workspace $ws1; exec firefox'
 
 #
 # Bindings

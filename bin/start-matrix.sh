@@ -4,7 +4,7 @@
 xdotool key control+shift+s
 xdotool key F11
 
-cmatrix
+cmatrix -s
 
 xdotool key F11
 xdotool key control+shift+s
