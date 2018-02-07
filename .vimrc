@@ -1,6 +1,7 @@
 syntax enable
 set background=dark
 set number
+set rnu
 colorscheme solarized
 
 :let mapleader = ","
