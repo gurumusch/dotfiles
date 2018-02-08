@@ -140,39 +140,27 @@ else
 fi
 
 ## get the vim-airline
-echo "Checking vim-airline (~/repos/vim-airline) ..."
-if [ ! -d ~/repos/vim-airline ]; then
-    cd ~/repos
+echo "Checking vim-airline (~/.vim/bundle/vim-airline/.git) ..."
+if [ ! -d ~/.vim/bundle/vim-airline/.git ]; then
+    cd ~/.vim/bundle
     git clone https://github.com/vim-airline/vim-airline.git
-    echo "updating vim-airline"
+    echo "vim-airline cloned"
 else
     cd ~/repos/vim-airline
     git pull
-    echo updating vim-airline
+    echo "vim-airline updated"
 fi
 
-# get the vim-airline
-echo "Checking vim-airline-themes (~/repos/vim-airline-themes) ..."
-if [ ! -d ~/repos/vim-airline-themes ]; then
-    cd ~/repos
+# get the vim-airline-themes
+echo "Checking vim-airline-themes (~/.vim/bundle/vim-airline-themes/.git) ..."
+if [ ! -d ~/.vim/bundle/vim-airline-themes/.git ]; then
+    cd ~/.vim/bundle
     git clone https://github.com/vim-airline/vim-airline-themes.git
-    echo "updating vim-airline-themes"
+    echo "vim-airline-themes cloned"
 else
-    cd ~/repos/vim-airline-themes
+    cd ~/.vim/bundle/vim-airline-themes
     git pull
-    echo updating vim-airline-themes
-fi
-cp ~/repos/vim-airline-themes/autoload/airline/themes/* ~/repos/vim-airline/autoload/airline/themes/
-
-# create the symbolic link for the gtk theme
-config_in_home=~/.themes/solarized-dark-gtk
-config=~/repos/solarized-dark-gtk
-echo "Checking vim config folder (${config_in_home}) ..."
-if [ ! -e $config_in_home ]; then
-    ln -s $config $config_in_home
-    echo "created link: ${config_in_home} -> ${config}"
-else
-    echo "exists"
+    echo "vim-airline-themes updated"
 fi
 
 # todo: need to ensure oh-my-zsh to be installed

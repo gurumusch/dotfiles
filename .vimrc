@@ -8,25 +8,30 @@ set shiftwidth=4
 set shiftround
 set showmatch
 
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
-
-"let g:airline_solarized_bg='dark'
-let g:solarized_termtrans=1
 let g:solarized_termcolors=256
+let g:airline_solarized_bg='dark'
+let g:solarized_termtrans=1
+let g:airline_theme='solarized'
 
 let mapleader = " "
 imap jj <ESC>
 
+" shortcuts for quit and save
 map <leader>q :q!<cr>
 map <leader>w :w<cr>
+map <leader>v :split<cr>
+map <leader>h :vsplit<cr>
+
+" shortcuts for easy buffer navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
 " Disable Arrow keys in Escape mode
 map <up> <nop>
 map <down> <nop>
