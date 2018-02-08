@@ -8,8 +8,10 @@ set shiftwidth=4
 set shiftround
 set showmatch
 
-" set background=dark
-" colorscheme solarized
+let g:solarized_termcolors=16
+
+set background=dark
+colorscheme solarized
 
 let g:airline_powerline_fonts = 1
 let g:solarized_termcolors=256
