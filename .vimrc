@@ -1,7 +1,7 @@
+execute pathogen#infect()
 syntax enable
-set background=dark
 set number
-colorscheme solarized
+set rnu
 
 :let mapleader = ","
 :imap jj <ESC>
