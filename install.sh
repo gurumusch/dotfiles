@@ -139,17 +139,30 @@ else
     echo "exists"
 fi
 
-# get the gtk theme
-echo "Checking solarized gtk theme (${current_directory}/repos/solarized-dark-gtk) ..."
-if [ ! -d ~/repos/solarized-dark-gtk ]; then
+## get the vim-airline
+echo "Checking vim-airline (~/repos/vim-airline) ..."
+if [ ! -d ~/repos/vim-airline ]; then
     cd ~/repos
-    git clone https://github.com/jankotek/solarized-dark-gtk.git
-    echo "updating gtk theme"
+    git clone https://github.com/vim-airline/vim-airline.git
+    echo "updating vim-airline"
 else
-    cd solarized-dark-gtk
+    cd ~/repos/vim-airline
     git pull
-    echo updating theme
+    echo updating vim-airline
 fi
+
+# get the vim-airline
+echo "Checking vim-airline-themes (~/repos/vim-airline-themes) ..."
+if [ ! -d ~/repos/vim-airline-themes ]; then
+    cd ~/repos
+    git clone https://github.com/vim-airline/vim-airline-themes.git
+    echo "updating vim-airline-themes"
+else
+    cd ~/repos/vim-airline-themes
+    git pull
+    echo updating vim-airline-themes
+fi
+cp ~/repos/vim-airline-themes/autoload/airline/themes/* ~/repos/vim-airline/autoload/airline/themes/
 
 # create the symbolic link for the gtk theme
 config_in_home=~/.themes/solarized-dark-gtk
