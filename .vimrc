@@ -2,6 +2,17 @@ execute pathogen#infect()
 syntax enable
 set number
 set rnu
+set tabstop=4
+
+set background=dark
+colorscheme solarized
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
+
+"let g:airline_solarized_bg='dark'
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
 
 :let mapleader = ","
 :imap jj <ESC>
