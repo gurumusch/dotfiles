@@ -218,8 +218,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id compton -f --config ~/.config/compton.conf
 exec --no-startup-id polybar.sh
 
-exec i3-msg 'workspace $ws10; exec terminator'
-exec i3-msg 'workspace $ws1; exec firefox'
+# exec i3-msg 'workspace $ws10; exec terminator'
+# exec i3-msg 'workspace $ws1; exec firefox'
 
 #
 # Bindings
@@ -248,4 +248,7 @@ bindsym $mod+g gaps inner current set 0; gaps outer current set 0
 bindsym $mod+Shift+g gaps inner current set 15; gaps outer current set 0
 
 bindsym $mod+x debuglog toggle
+
+# enable conky on startup
+exec --no-startup-id conky
 
