@@ -18,6 +18,7 @@ let g:solarized_termcolors=256
 let g:airline_solarized_bg='dark'
 let g:solarized_termtrans=1
 let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled=1
 
 let mapleader = " "
 imap jj <ESC>
@@ -27,6 +28,8 @@ map <leader>q :q!<cr>
 map <leader>w :w<cr>
 map <leader>v :split<cr>
 map <leader>h :vsplit<cr>
+map <leader>f :bprevious<cr>
+map <leader>j :bnext<cr>
 
 " shortcuts for easy buffer navigation
 map <C-h> <C-w>h
