@@ -77,6 +77,17 @@ else
     echo "exists"
 fi
 
+# create the symbolic link for the conky config
+config_in_home=~/.conkyrc
+config=`pwd`/.conkyrc
+echo "Checking conky config file (${config_in_home}) ..."
+if [ ! -e $config_in_home ]; then
+    ln -s $config $config_in_home
+    echo "created link: ${config_in_home} -> ${config}"
+else
+    echo "exists"
+fi
+
 # create the symbolic link for the vim config
 config_in_home=~/.vimrc
 config=`pwd`/.vimrc
