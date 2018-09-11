@@ -1,5 +1,6 @@
 execute pathogen#infect()
 syntax enable
+set nocompatible
 set rnu
 set tabstop=4
 set autoindent
