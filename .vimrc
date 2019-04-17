@@ -2,6 +2,7 @@ execute pathogen#infect()
 syntax enable
 set nocompatible
 set rnu
+set number
 set tabstop=4
 set autoindent
 set copyindent
@@ -26,11 +27,10 @@ imap jj <ESC>
 
 " shortcuts for quit and save
 map <leader>q :q!<cr>
-map <leader>w :w<cr>
-map <leader>v :split<cr>
-map <leader>h :vsplit<cr>
-map <leader>f :bprevious<cr>
-map <leader>j :bnext<cr>
+map <leader>a :q<cr>
+map <leader>f :w<cr>
+map <leader>v :vsplit<cr>
+map <leader>h :split<cr>
 
 " shortcuts for easy buffer navigation
 map <C-h> <C-w>h
