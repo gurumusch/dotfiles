@@ -1,45 +1,57 @@
-! the color theme
-! for more info about solarized themes visit: http://ethanschoonover.com/solarized
-*Theme.base03:     #002b36
-*Theme.base02:     #073642
-*Theme.base01:     #586e75
-*Theme.base00:     #657b83
+!! Colorscheme
 
-*Theme.base0:      #839496
-*Theme.base1:      #93a1a1
-*Theme.base2:      #eee8d5
-*Theme.base3:      #fdf6e3
+! special
+*background:   [97]#282a36
+*foreground:   #eff0eb
+*cursorColor:  #9aedfe
 
-*Theme.yellow:     #b58900
-*Theme.orange:     #cb4b16
-*Theme.red:        #dc322f
-*Theme.magenta:    #d33682
-*Theme.violet:     #6c71c4
-*Theme.blue:       #268bd2
-*Theme.cyan:       #2aa198
-*Theme.green:      #859900
+! black
+*color0:      #33303b
+*color8:      #4f4b58
 
-! === rofi ===
-rofi.lines: 5
-rofi.modi: combi,drun
-rofi.combi-modi: window,drun
-rofi.fullscreen: true
-rofi.padding: 400
-rofi.opacity: 75
+! red
+*color1:      #ff5c57
+*color9:      #ff5c57
 
-rofi.font: "System San Francisco Display" 18
+! green
+*color2:      #5af78e
+*color10:     #5af78e
 
-rofi.fg:                             #5294E2
-rofi.bg:                             #5d729f
-rofi.fg-active:                      #34405a
-rofi.fg-urgent:                      #34405a
-rofi.hlfg-active:                    #5e73a0
-rofi.hlfg-urgent:                    #5e73a0
-rofi.bg-active:                      #34405a
-rofi.bg-urgent:                      #34405a
-rofi.hlbg-active:                    #5d729f
-rofi.hlbg-urgent:                    #5d729f
-rofi.bgalt:                          #5671a0
-rofi.hlfg:                           #34405a
-rofi.hlbg:                           #34405a
-rofi.bc: #789ee1
+! yellow
+*color3:      #f3f99d
+*color11:     #f3f99d
+
+! blue
+*color4:      #57c7ff
+*color12:     #57c7ff
+
+! magenta
+*color5:      #ff6ac1
+*color13:     #ff6ac1
+
+! cyan
+*color6:      #9aedfe
+*color14:     #9aedfe
+
+! white
+*color7:      #eff0eb
+*color15:     #eff0eb
+
+!! URxvt Appearance
+URxvt.font: xft:Source Code Pro:style=Regular:size=12
+URxvt.boldFont: xft:Source Code Pro,Source Code Pro Semibold:style=Semibold,Regular:size=12
+URxvt.italicFont: xft:Source Code Pro:style=Italic:size=12
+URxvt.boldItalicfont: xft:Source Code Pro:style=Bold Italic:size=12
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 8
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 32
+URxvt*background: rgba:0000/0000/0200/a800
+

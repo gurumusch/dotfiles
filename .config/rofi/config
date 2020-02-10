@@ -1,6 +1,0 @@
-rofi.lines: 5
-rofi.modi: combi,drun
-rofi.combi-modi: window,drun
-rofi.theme: ~/.config/rofi/theme.rasi
-
-rofi.font: "System San Francisco Display" 14

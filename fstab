@@ -1,0 +1,9 @@
+# /dev/sda2
+UUID=6049e229-f9ff-481c-b7e5-7e89c8e36635	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda3
+UUID=7c208b22-2463-42f1-b4db-155b6d5bee06	none      	swap      	defaults  	0 0
+
+
+# \\freenas\Storage
+\\freenas\Storage				/mnt/storage	cifs		_netdev,iocharset=utf8,uid=1000,gid=1000,users,credentials=/etc/samba/credentials/storage	0 0
