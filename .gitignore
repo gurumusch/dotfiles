@@ -1,1 +1,3 @@
 config/nvim/plugin
+config/hypr/wallpapers/*.jpg
+config/hypr/wallpapers/*.png
