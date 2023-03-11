@@ -6,6 +6,7 @@ if [[ $# -eq 1 && $1 = "arch" ]]; then
 	for script in $scripts
 	do
 		echo "Executing $script"
-		$cwd/bin/sync/$script
+		prefix="[$(echo "${script}" | head -c2)]   "
+		$cwd/bin/sync/$script 2>&1 | sed "s/^/${prefix}/"
 	done
 fi
