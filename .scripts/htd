@@ -1,5 +1,0 @@
-#!/bin/bash
-
-ID=`echo $1 | cut -c 3-`
-DECIMAL=`echo "obase=10; ibase=16; $ID" | bc`
-printf "16->%s\t10->%s\n" "$ID" "$DECIMAL"

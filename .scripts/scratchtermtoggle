@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-id=$(xdotool search --classname scratchterm)
-
-if [ "$id" != "" ]
- then
-  bspc node "$id" --flag hidden -f
-  bspc node "$id" --flag sticky
-  bspc node "$id" --state floating
-fi

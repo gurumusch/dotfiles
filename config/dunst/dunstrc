@@ -1,8 +1,0 @@
-[global]
-	geometry = "300x1+810-50"
-	transparency = 15
-	shrink = no
-	padding = 16
-	horizontal_padding = 16
-	word_wrap = yes
-	corner_radius = 8

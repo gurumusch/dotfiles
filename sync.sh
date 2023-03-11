@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-#
 
 if [[ $# -eq 1 && $1 = "arch" ]]; then
 	cwd=`pwd`
