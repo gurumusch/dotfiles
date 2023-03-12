@@ -97,6 +97,7 @@ return require("packer").startup(function(use)
 
     use({
         "williamboman/mason-lspconfig.nvim",
+        after = "williamboman/mason.nvim",
         config = function()
             require("configs.mason-lsp")
         end,
