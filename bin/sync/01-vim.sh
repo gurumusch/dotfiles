@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+current_directory=`pwd`
+
 tool_name="neovim"
 tool_config_folder="nvim"
 dependencies="aspell aspell-de aspell-en"
@@ -9,8 +11,6 @@ echo "Ensure $tool_name is installed"
 sudo pacman -S $tool_name --needed --noconfirm 2>&1 | sed "s/^/   /"
 echo "Install dependencies of $tool_name"
 sudo pacman -S $dependencies --needed --noconfirm 2>&1 | sed "s/^/   /"
-
-current_directory=`pwd`
 
 # Create the symbolic link for the vim config
 config_in_home=~/.config/$tool_config_folder

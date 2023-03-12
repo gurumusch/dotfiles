@@ -1,0 +1,17 @@
+
+(defvar main_monitor 0)
+(defvar number_of_workspaces 10)
+(defvar real_name "Andreas Schäfer")
+(defvar user_name "@andreas")
+(defvar EWW_CONFIG_DIR "~/.config/eww")
+(defvar profile_picture "assets/avatar.png")
+
+(include "./yuck/vars.yuck")
+(include "./yuck/dock.yuck")
+(include "./yuck/panel.yuck")
+(include "./yuck/osd.yuck")
+(include "./yuck/powermenu.yuck")
+(include "./yuck/datemenu.yuck")
+(include "./yuck/quicksettings.yuck")
+(include "./yuck/desktop.yuck")
+(include "./yuck/windows.yuck")

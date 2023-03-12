@@ -2,12 +2,15 @@
 
 current_directory=`pwd`
 
-tool_name="kitty"
-tool_config_folder="kitty"
+tool_name="eww-wayland"
+tool_config_folder="eww"
+dependencies="ttf-nerd-fonts-symbols-2048-em-mono"
 
 # Install the software
 echo "Ensure $tool_name is installed"
-sudo pacman -S $tool_name --needed --noconfirm 2>&1 | sed "s/^/   /"
+yay -S $tool_name --needed --noconfirm 2>&1 | sed "s/^/   /"
+echo "Install dependencies of $tool_name"
+sudo pacman -S $dependencies --needed --noconfirm 2>&1 | sed "s/^/   /"
 
 # Create the symbolic link for the vim config
 config_in_home=~/.config/$tool_config_folder
@@ -19,3 +22,4 @@ if [ ! -e $config_in_home ]; then
 else
     echo "exists"
 fi
+
