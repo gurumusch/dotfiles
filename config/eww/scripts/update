@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+function update_count {
+   updates=$(checkupdates | wc -l)
+   eww update sd_var_update="$updates"
+}
+
+function update {
+   kitty --title pacman_is_kitty sh -c 'sudo pacman -Syu'
+   sleep 1
+   updates=$(checkupdates | wc -l)
+   eww update sd_var_update="$updates"
+}
+
+function check {
+   while true
+   do
+      update_count
+      sleep 60
+   done
+}
+
+if [[ $1 == 'update' ]]; then update; fi
+if [[ $1 == 'check' ]]; then check; fi

@@ -17,3 +17,9 @@ $mono_font: 'mononoki NF';
 @import "./scss/osd.scss";
 @import "./scss/dock.scss";
 tooltip{ @include tooltip }
+
+@import "./scss/colors.scss";
+@import "./shephards-dream/variables.scss";
+@import "./shephards-dream/datemenu.scss";
+@import "./shephards-dream/power-menu.scss";
+@import "./shephards-dream/bar.scss";

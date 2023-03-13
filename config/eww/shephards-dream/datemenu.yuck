@@ -1,0 +1,27 @@
+(defwidget sdp_datemenu [] (eventbox 
+    :onclick "${EWW_CONFIG_DIR}/scripts/launcher toggle_menu sdw_calendar"
+    (box
+        :valign "START"
+        :halign "center"
+        :orientation "v"
+        :class "datemenu"
+        :space-evenly false
+        (box
+            :halign "center"
+            :space-evenly false
+            :class "clock"
+            (label :text hour)
+            (label :text ":")
+            (label :text minutes)
+        )
+        (label  
+            :class "uptime" 
+            :text "uptime: ${uptime}"
+            :valign "start"
+        )
+        (box
+            :class "calendar-bin module"
+            (calendar)
+        )
+    )
+))

@@ -1,6 +1,6 @@
 
 (defvar main_monitor 0)
-(defvar number_of_workspaces 10)
+(defvar number_of_workspaces 6)
 (defvar real_name "Andreas Schäfer")
 (defvar user_name "@andreas")
 (defvar EWW_CONFIG_DIR "~/.config/eww")
@@ -15,3 +15,9 @@
 (include "./yuck/quicksettings.yuck")
 (include "./yuck/desktop.yuck")
 (include "./yuck/windows.yuck")
+
+(include "./shephards-dream/variables.yuck")
+(include "./shephards-dream/bar.yuck")
+(include "./shephards-dream/power-menu.yuck")
+(include "./shephards-dream/datemenu.yuck")
+(include "./shephards-dream/windows.yuck")

@@ -15,9 +15,11 @@ if [[ $HDMI == '"HDMI-A-1"' ]]; then
     eww update main_monitor=1
 else
     #eww open dock0
-    eww open bar0
-    eww open desktop0
-    eww update main_monitor=0
+    eww open shephards_bar
+    #eww open bar0
+    #eww open desktop0
+    #eww update main_monitor=0
 fi
 
 eww update wallpaper=$(gsettings get org.gnome.desktop.background picture-uri)
+~/.config/eww/scripts/update check

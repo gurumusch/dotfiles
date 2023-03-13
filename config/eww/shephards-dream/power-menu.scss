@@ -1,0 +1,40 @@
+.sdw_powermenu{
+    background-color: rgba(0,0,0,0.5);
+    .content{
+        @include floating_widget;
+        .power-menu{ 
+            border-radius: $radii*3;
+            padding: 15px;
+        }
+        .button-bin{
+            margin: 15px;
+            margin-bottom: 0;
+            .button{
+                @include button;
+                border-radius: $radii*2.4;
+                font-size: 60px;
+                min-width: 130px;
+                min-height: 130px;
+                .icon{
+                    background-size: contain;
+                    margin: 24px;
+                    @if $theme == 'light' {
+                        &.shutdown{ background-image: url($assets+'powermenu/light-shutdown.png'); }
+                        &.reboot{   background-image: url($assets+'powermenu/light-reboot.png'); }
+                        &.logout{   background-image: url($assets+'powermenu/light-logout.png'); }
+                        &.lock{     background-image: url($assets+'powermenu/light-lock.png'); }
+                    }@else{
+                        &.shutdown{ background-image: url($assets+'powermenu/shutdown.png'); }
+                        &.reboot{   background-image: url($assets+'powermenu/reboot.png'); }
+                        &.logout{   background-image: url($assets+'powermenu/logout.png'); }
+                        &.lock{     background-image: url($assets+'powermenu/lock.png'); }
+                    }
+                }
+            }
+            .label{
+                font-size: 20px;
+                margin: 8px 0;
+            }
+        }
+    }
+}

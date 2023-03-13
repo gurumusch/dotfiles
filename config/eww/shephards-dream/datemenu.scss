@@ -1,0 +1,54 @@
+$spacing: $popover_padding*0.5;
+
+.datemenu{
+    @include floating_widget;
+
+    .module{
+        @include widget;
+        margin: $spacing;
+        padding: 12px;
+    }
+
+    .clock *{
+        margin-top: $spacing;
+        text-shadow: $text_shadow;
+        font-size: 7em;
+    }
+
+    .uptime{
+        margin-bottom: $spacing*2;
+        font-size: 1.1em;
+        text-shadow: $text_shadow;
+        color: transparentize($fg_color, 0.3)
+    }
+    
+    .calendar-bin{
+        padding: .6em 2em 0 2em;
+        calendar{
+            &.button{
+                @include button($flat: true);
+                margin: 1em;
+            }
+            &:selected{
+                box-shadow: inset 0 -8px 0 0 transparentize($accent, 0.5),
+                            inset 0 0 0 1px $accent;
+                border-radius: $button_radius;
+            }
+            &.header{
+                background-color: transparent;
+                border: none;
+                color: transparentize($fg_color, 0.5);
+            }
+            &.highlight{
+                background-color: transparent;
+                color: transparentize($accent, 0.5);
+            }
+            &:indeterminate {
+                color: transparentize($fg_color, 0.9);
+            }
+            font-size: 1.2em;
+            padding: .2em;
+        }
+    }
+
+}

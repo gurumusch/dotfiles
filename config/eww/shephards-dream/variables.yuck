@@ -1,0 +1,12 @@
+(deflisten  sd_var_active_workspace     :initial  "1"  `scripts/workspaces active`)
+(deflisten  sd_var_workspaces           :initial  "[]" `scripts/workspaces get`)
+(deflisten  sd_var_window               :initial  "-"  `scripts/window class`)
+
+(defpoll    sd_var_updatex               :interval "60s"
+                                        :initial  "0"
+                                        `scripts/update get`)
+
+(defpoll    sd_var_clock                :interval "5s"
+                                        `date "+%H:%M  |  %A %d. %b."`)
+
+(defvar     sd_var_update               "4")

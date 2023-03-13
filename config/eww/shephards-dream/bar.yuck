@@ -1,0 +1,86 @@
+(defwidget sdp_launcher [] (box :class "button-bin launcher"
+    (button
+        :class "button launcher"
+        :onclick "${EWW_CONFIG_DIR}/scripts/launcher applauncher"
+        (label :class "icon" :text "󰣇" :halign "center")
+    )
+))
+
+(defwidget sdp_workspaces [] (box :class "button-bin"
+    (eventbox :class "button workspaces"
+        (box
+            :space-evenly false
+            (for workspace in sd_var_workspaces
+                (button
+                    :class "workspace-btn ${workspace.id == sd_var_active_workspace ? "active" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+                    :onclick "hyprctl dispatch workspace ${workspace.id}"
+                    :valign "center"
+                    (label :text "${workspace.id}")
+                )
+            )
+        )
+    )
+))
+
+(defwidget sdp_clock [] (box :class "button-bin"
+    (button
+        :onclick "${EWW_CONFIG_DIR}/scripts/launcher toggle_menu sdw_calendar"
+        :class "button clock"
+        (label  :text sd_var_clock)
+    )
+))
+
+(defwidget sdp_window [] (box :class "button-bin"
+    (button :class "button window" 
+        (label
+            :visible {sd_var_window != "null" ? true : false}
+            :text window)
+    )
+))
+
+(defwidget sdp_update [] (box :class "button-bin"
+    (eventbox :class "button update"
+        (box
+            :space-evenly false
+            (button
+                :class "update-btn ${sd_var_update > 0 ? "pending" : ""}"
+                :onclick "${EWW_CONFIG_DIR}/scripts/update update"
+                :valign "center"
+                (label :text "${sd_var_update} ")
+            )
+        )
+    )
+))
+
+(defwidget sdp_powermenu_button [] (box :class "button-bin powermenu"
+    (button 
+        :class "button powermenu"
+        :onclick "${EWW_CONFIG_DIR}/scripts/launcher toggle_menu sdw_powermenu"
+        (label :class "icon" :text "")
+    )
+))
+
+(defwidget shephards_bar [] (centerbox
+    :class "sdpanel ${active_ws_empty ? "floating" : ""}"
+    (box
+        :class "leftBar"
+        :space-evenly false
+        (sdp_launcher)
+        (sdp_workspaces)
+        (label :visible false :text sd_var_active_workspace);needs so active_workspace gets updated
+        (sdp_window)
+    )
+    (box
+        :class "centerBar"
+        (sdp_clock)
+    )
+    (box
+        :class "righBar"
+        :space-evenly false
+        :halign "end"
+        (panel_system-indicators)
+        (panel_notifications)
+        (sdp_update)
+        (sdp_powermenu_button)
+    )
+))
