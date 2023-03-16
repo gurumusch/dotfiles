@@ -75,7 +75,7 @@ function screenshot {
     fi
 }
 
-if [[ $1 == 'applauncher'       ]]; then rofi -show drun; fi
+if [[ $1 == 'applauncher'    ]]; then wofi --show drun; fi
 if [[ $1 == 'pavu'           ]]; then pavucontrol; fi
 if [[ $1 == 'network'        ]]; then network; fi
 if [[ $1 == 'rog'            ]]; then rog-control-center; fi

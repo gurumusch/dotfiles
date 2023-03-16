@@ -1,0 +1,17 @@
+#window {
+   background-color: rgba(3, 0, 39, 0.65);
+   color: white;
+}
+
+#input {
+   max-width: 5em
+}
+
+#inner-box {
+   margin-left: 50px;
+   margin-right: 50px;
+}
+
+#entry {
+   width: 280px;
+}
