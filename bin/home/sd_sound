@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+function get_volume {
+   amixer -c 1 sget Master | grep "Mono:" | awk '{print $4}' | sed -E 's/\[([0-9]*)%\]/\1/g'
+}
+
+function get_muted {
+   amixer -c 1 sget Master | grep "Mono:" | awk '{print $6}' | sed -E 's/\[on\]/on/; s/\[off\]/off/'
+}
+
+function dec {
+   amixer -c 1 sset Master 10%-
+   eww update sd_var_volume="$(get_volume)"
+}
+
+function inc {
+   amixer -c 1 sset Master 10%+
+   eww update sd_var_volume="$(get_volume)"
+}
+
+function toggle {
+   amixer -c 1 sset Master toggle
+   eww update sd_var_muted="$(get_muted)"
+}
+
+if [[ $1 == 'get_volume' ]]; then get_volume; fi
+if [[ $1 == 'get_muted' ]]; then get_muted; fi
+if [[ $1 == 'dec' ]]; then dec; fi
+if [[ $1 == 'inc' ]]; then inc; fi
+if [[ $1 == 'toggle' ]]; then toggle; fi

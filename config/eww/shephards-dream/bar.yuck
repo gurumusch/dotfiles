@@ -38,13 +38,26 @@
     )
 ))
 
+(defwidget sdp_volume []
+   (box :class "button-bin"
+      (eventbox :class "button volume"
+         (box :space-evenly false
+            (button :class "volume-bin"
+                    :onclick "$EWW_CONFIG_DIR/scripts/sd_sound toggle"
+               (label :text "${sd_var_muted} ${sd_var_volume}%") 
+            )
+         )
+      )
+   )
+)
+
 (defwidget sdp_update [] (box :class "button-bin"
     (eventbox :class "button update"
         (box
             :space-evenly false
             (button
                 :class "update-btn ${sd_var_update > 0 ? "pending" : ""}"
-                :onclick "${EWW_CONFIG_DIR}/scripts/update update"
+                :onclick "${EWW_CONFIG_DIR}/scripts/sd_update update"
                 :valign "center"
                 (label :text "${sd_var_update} ")
             )
@@ -80,6 +93,7 @@
         :halign "end"
         (panel_system-indicators)
         (panel_notifications)
+        (sdp_volume)
         (sdp_update)
         (sdp_powermenu_button)
     )

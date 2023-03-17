@@ -16,6 +16,7 @@ if [[ $HDMI == '"HDMI-A-1"' ]]; then
 else
     #eww open dock0
     eww open shephards_bar
+    eww open shephards_desktop
     #eww open bar0
     #eww open desktop0
     #eww update main_monitor=0

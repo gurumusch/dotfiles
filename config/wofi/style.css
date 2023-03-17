@@ -1,17 +1,33 @@
 #window {
    background-color: rgba(3, 0, 39, 0.65);
    color: white;
+   border-bottom-left-radius: 7px;
+   border-bottom-right-radius: 7px;
 }
 
 #input {
-   max-width: 5em
+   font-size: 1.5em;
+   max-width: 5em;
+   margin: 0.5em;
 }
 
 #inner-box {
-   margin-left: 50px;
-   margin-right: 50px;
+   margin-left: calc(0.5em + 3px);
+   margin-right: calc(0.5em + 3px);
 }
 
 #entry {
-   width: 280px;
+   box-sizing: border-box;
+   font-size: 1.5em;
+   height: 2em;
+   line-height: 2em;
+   border-radius: 3.5px;
+   border-style: solid;
+   border-width: 3px;
+   border-color: transparent;
+}
+
+#entry:selected {
+   border-color: #f66151;
+   background-color: transparent;
 }

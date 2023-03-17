@@ -4,9 +4,15 @@
 
 (defpoll    sd_var_updatex               :interval "60s"
                                         :initial  "0"
-                                        `scripts/update get`)
+                                        `scripts/sd_update get`)
 
 (defpoll    sd_var_clock                :interval "5s"
                                         `date "+%H:%M  |  %A %d. %b."`)
 
-(defvar     sd_var_update               "4")
+(defpoll    sd_var_muted                :interval "5s"
+                                        `scripts/sd_sound get_muted`)
+
+(defpoll    sd_var_volume               :interval "5s"
+                                        `scripts/sd_sound get_volume`)
+
+(defvar     sd_var_update               "-")
