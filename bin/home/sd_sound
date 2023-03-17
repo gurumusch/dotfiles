@@ -10,16 +10,27 @@ function get_muted {
 
 function dec {
    amixer -c 1 sset Master 10%-
+   amixer -c 1 sset Speaker unmute
+   amixer -c 1 sset Master unmute
    eww update sd_var_volume="$(get_volume)"
 }
 
 function inc {
    amixer -c 1 sset Master 10%+
+   amixer -c 1 sset Speaker unmute
+   amixer -c 1 sset Master unmute
    eww update sd_var_volume="$(get_volume)"
 }
 
 function toggle {
-   amixer -c 1 sset Master toggle
+   state=$(get_muted)
+   if [[ $state == 'on' ]]; then
+      amixer -c1 sset Master mute
+   else
+      amixer -c1 sset Master unmute
+      amixer -c1 sset Speaker unmute
+   fi
+   #amixer -c 1 sset Speaker toggle
    eww update sd_var_muted="$(get_muted)"
 }
 
