@@ -1,4 +1,3 @@
-
 (defvar main_monitor 0)
 (defvar number_of_workspaces 6)
 (defvar real_name "Andreas Schäfer")

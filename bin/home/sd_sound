@@ -30,7 +30,6 @@ function toggle {
       amixer -c1 sset Master unmute
       amixer -c1 sset Speaker unmute
    fi
-   #amixer -c 1 sset Speaker toggle
    eww update sd_var_muted="$(get_muted)"
 }
 
