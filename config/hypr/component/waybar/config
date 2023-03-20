@@ -11,7 +11,7 @@
     //"margin-top":5,
     //"modules-left": ["wlr/workspaces","wlr/taskbar"],
     //"modules-right": ["tray","temperature","network","battery","custom/ss","custom/cycle_wall","custom/expand","cpu","clock"],
-    "modules-right": ["tray","network","battery","battery#bat2","cpu"],
+    "modules-right": ["tray","network","cpu"],
     //"modules-center": ["custom/dynamic_pill"],
     // Modules configuration
 

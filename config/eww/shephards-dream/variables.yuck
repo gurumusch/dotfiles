@@ -9,10 +9,20 @@
 (defpoll    sd_var_clock                :interval "5s"
                                         `date "+%H:%M  |  %A %d. %b."`)
 
+(defpoll    sd_var_brightness           :interval "5s"
+                                        `brightnessctl get`)
+
+(defpoll    sd_var_battery0            :interval "5s"
+                                        `cat /sys/class/power_supply/BAT0/capacity`)
+
+(defpoll    sd_var_battery1            :interval "5s"
+                                        `cat /sys/class/power_supply/BAT1/capacity`)
+
 (defpoll    sd_var_muted                :interval "5s"
-                                        `scripts/sd_sound get_muted`)
+                                        `~/bin/sd_sound get_muted`)
 
 (defpoll    sd_var_volume               :interval "5s"
-                                        `scripts/sd_sound get_volume`)
+                                        `~/bin/sd_sound get_volume`)
 
 (defvar     sd_var_update               "-")
+(defvar     sd_var_max_brightness       "852")

@@ -23,4 +23,5 @@ else
 fi
 
 eww update wallpaper=$(gsettings get org.gnome.desktop.background picture-uri)
-~/.config/eww/scripts/update check
+~/.config/eww/scripts/sd_update check
+~/.config/eww/scripts/sd_cycle_wallpaper

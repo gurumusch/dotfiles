@@ -70,7 +70,67 @@
                 &:active{ color: $accent; }
             }
         }
+        &.volume {
+            @include button($flat: false, $radii: $panel_button_radius);
+            .volume-btn{
+                label{ font-size: 1.2em; }
+                margin: 2px;
+                border-radius: $radii * 0.5;
+                min-width: 1rem;
+                padding: 0px 0.5em;
+                &:hover{
+                    &.empty{ color: transparentize($fg_color, 0.18); }
+                    &.occupied{ color: $fg_color; }
+                }
+            }
+        }
+        &.battery {
+            @include button($flat: false, $radii: $panel_button_radius);
+            .volume-btn{
+                label{ font-size: 1.2em; }
+                margin: 2px;
+                border-radius: $radii * 0.5;
+                min-width: 1rem;
+                padding: 0px 0.5em;
+                &:hover{
+                    &.empty{ color: transparentize($fg_color, 0.18); }
+                    &.occupied{ color: $fg_color; }
+                }
+            }
+        }
 
     }
 
 }
+
+.button-bin label.icon {
+   font-size: 2.5em;
+}
+
+scale.slider {
+   margin: 0px;
+   padding: 0px;
+   margin-right: 5px;
+   margin-left: 5px;
+
+   trough {
+      all: unset;
+      background-color: darkgrey;
+      border-radius: 5px;
+      min-height: 5px;
+      min-width: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+
+      highlight {
+         all: unset;
+         background-color: $red;
+         border-radius: 5px;
+         min-height: 5px;
+         min-width: 0px;
+         margin-left: 0px;
+         margin-right: 0px;
+      }
+   }
+}
+

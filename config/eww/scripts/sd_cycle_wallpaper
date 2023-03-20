@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+function check {
+   while true
+   do
+      ~/bin/wallpaper.sh
+      sleep 300
+   done
+}
+
+if [[ $1 == 'update' ]]; then update; fi
+if [[ $1 == 'check' ]]; then check; fi

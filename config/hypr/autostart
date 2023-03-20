@@ -12,7 +12,7 @@ $scripts/launch_waybar &
 #$scripts/tools/dynamic &
 
 # wallpaper
-#$scripts/wall $config/wallpapers/sheep-wallpaper.jpg &
+$scripts/wall $config/wallpapers/sheep-wallpaper.jpg &
 
 # effects
 #$scripts/rgb &
