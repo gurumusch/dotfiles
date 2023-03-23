@@ -4,10 +4,13 @@ current_directory=`pwd`
 
 tool_name="hyprland"
 tool_config_folder="hypr"
+dependencies="brightnessctl"
 
 # Install the software
 echo "Ensure $tool_name is installed"
-sudo pacman -S $tool_name --needed --noconfirm 2>&1 | sed "s/^/   /"
+yay -S $tool_name --needed --noconfirm 2>&1 | sed "s/^/   /"
+echo "Install dependencies of $tool_name"
+sudo pacman -S $dependencies --needed --noconfirm 2>&1 | sed "s/^/   /"
 
 # Create the symbolic link for the vim config
 config_in_home=~/.config/$tool_config_folder
