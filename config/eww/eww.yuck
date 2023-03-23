@@ -16,7 +16,6 @@
 (include "./yuck/windows.yuck")
 
 (include "./shephards-dream/variables.yuck")
-(include "./shephards-dream/desktop.yuck")
 (include "./shephards-dream/bar.yuck")
 (include "./shephards-dream/power-menu.yuck")
 (include "./shephards-dream/datemenu.yuck")

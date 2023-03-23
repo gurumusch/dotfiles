@@ -120,9 +120,9 @@
 
 (defwidget sdp_wallpaper []
    (box :class "button-bin"
-      (eventbox :class "button update"
+      (eventbox :class "button wallpaper"
           (box :space-evenly false
-             (button :class "update-btn ${sd_var_update > 0 ? "pending" : ""}"
+             (button :class "wallpaper-btn"
                      :onclick "~/bin/wallpaper.sh update"
                      :valign "center"
                (label :text "󰸉")
