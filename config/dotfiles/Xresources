@@ -1,7 +1,7 @@
 !! Colorscheme
 
 ! special
-*background:   [97]#282a36
+*background:   [75]#030027
 *foreground:   #eff0eb
 *cursorColor:  #9aedfe
 
@@ -53,5 +53,6 @@ URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 32
+URxvt.transparent: false
 URxvt*background: rgba:0000/0000/0200/a800
 

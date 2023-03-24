@@ -2,11 +2,14 @@
 
 current_directory=`pwd`
 
-tool_name="rxvt-unicode"
+tool_name="alacritty"
+dependencies="ttf-sourcecodepro-nerd"
 
 # Install the software
 echo "Ensure $tool_name is installed"
 sudo pacman -S $tool_name --needed --noconfirm 2>&1 | sed "s/^/   /"
+echo "Install dependencies of $tool_name"
+sudo pacman -S $dependencies --needed --noconfirm 2>&1 | sed "s/^/   /"
 
 # Link Xresources in home
 config_in_home=~/.Xresources
