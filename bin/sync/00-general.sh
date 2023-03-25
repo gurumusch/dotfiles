@@ -2,7 +2,7 @@
 
 # Install some basic software
 echo "Ensure basic software is installed"
-sudo pacman -S git base-devel cmatrix man libfido2 --needed --noconfirm 2>&1 | sed "s/^/   /"
+sudo pacman -S git base-devel alsa-utils man libfido2 --needed --noconfirm 2>&1 | sed "s/^/   /"
 
 # Link bin folder in home
 config_in_home=~/bin

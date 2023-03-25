@@ -12,6 +12,9 @@ sudo pacman -S $tool_name --needed --noconfirm 2>&1 | sed "s/^/   /"
 echo "Install dependencies of $tool_name"
 sudo pacman -S $dependencies --needed --noconfirm 2>&1 | sed "s/^/   /"
 
+mkdir -p $HOME/.local/share/nvim/site/pack/packer/start/
+git clone --depth 1 https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 # Create the symbolic link for the vim config
 config_in_home=~/.config/$tool_config_folder
 config=`pwd`/config/$tool_config_folder
@@ -22,3 +25,6 @@ if [ ! -e $config_in_home ]; then
 else
     echo "exists"
 fi
+
+nvim -E -c PackerSync -c q
+

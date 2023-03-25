@@ -86,7 +86,7 @@ return require("packer").startup(function(use)
         end,
     })
 
-    use("hrsh7th/cmp-nvim-lsp")
+    use({"hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" })
 
     use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
 
