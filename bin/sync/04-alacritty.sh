@@ -3,18 +3,15 @@
 current_directory=`pwd`
 
 tool_name="alacritty"
-dependencies="ttf-sourcecodepro-nerd"
 
 # Install the software
 echo "Ensure $tool_name is installed"
 sudo pacman -S $tool_name --needed --noconfirm 2>&1 | sed "s/^/   /"
-echo "Install dependencies of $tool_name"
-sudo pacman -S $dependencies --needed --noconfirm 2>&1 | sed "s/^/   /"
 
-# Link Xresources in home
-config_in_home=~/.Xresources
-config=`pwd`/config/dotfiles/Xresources
-echo "Checking .Xresources (${config_in_home}) ..."
+# Link alacritty config in home
+config_in_home=~/config/$tool_name
+config=`pwd`/config/$tool_name
+echo "Checking $tool_name (${config_in_home}) ..."
 if [ ! -e $config_in_home ]; then
     ln -s $config $config_in_home 2>&1 | sed "s/^/   /"
     echo "created link: ${config_in_home} -> ${config}"

@@ -103,7 +103,7 @@ HEADLINE_DO_CLOCK=true
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias sa="ssh -i /home/andreas/.ssh/id_solo_tap_sk andreas@andreas-schaefer.name"
+alias sa="ssh -i /home/andreas/.ssh/id_nitrokey3_mini_sk andreas@andreas-schaefer.name"
 alias s="ssh"
 alias vim="nvim"
 alias vi="nvim"

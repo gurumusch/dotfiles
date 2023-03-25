@@ -38,13 +38,12 @@
 *color15:     #eff0eb
 
 !! URxvt Appearance
-URxvt.font: xft:Source Code Pro:style=Regular:size=12
-URxvt.boldFont: xft:Source Code Pro,Source Code Pro Semibold:style=Semibold,Regular:size=12
+URxvt.font: xft:FiraCode Nerd Font Mono:style=Regular:size=12
+URxvt.boldFont: xft:Sauce Code Pro Nerd Font Complete:style=Semibold,Regular:size=12
 URxvt.italicFont: xft:Source Code Pro:style=Italic:size=12
 URxvt.boldItalicfont: xft:Source Code Pro:style=Bold Italic:size=12
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
-URxvt.geometry: 92x24
 URxvt.internalBorder: 8
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
@@ -54,5 +53,4 @@ URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 32
 URxvt.transparent: false
-URxvt*background: rgba:0000/0000/0200/a800
 
