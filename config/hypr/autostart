@@ -12,7 +12,8 @@ $scripts/launch_waybar &
 #$scripts/tools/dynamic &
 
 # wallpaper
-$scripts/wall $config/wallpapers/sheep-wallpaper.jpg &
+#$scripts/wall $config/wallpapers/sheep-wallpaper.jpg &
+#$scripts/wall /boot/grub/themes/Xenlism-Arch/background.jpg
 
 # effects
 #$scripts/rgb &

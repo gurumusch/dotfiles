@@ -4,7 +4,7 @@ current_directory=`pwd`
 
 tool_name="hyprland"
 tool_config_folder="hypr"
-dependencies="brightnessctl alsa-tools"
+dependencies="brightnessctl alsa-tools jq socat"
 aur_dependencies="swww"
 
 # Install the software
