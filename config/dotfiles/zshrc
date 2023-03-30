@@ -107,3 +107,5 @@ alias sa="ssh -i /home/andreas/.ssh/id_nitrokey3_mini_sk andreas@andreas-schaefe
 alias s="ssh"
 alias vim="nvim"
 alias vi="nvim"
+
+export PATH=~/bin:~/.local/bin:$PATH
