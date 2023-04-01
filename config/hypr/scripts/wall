@@ -1,4 +1,5 @@
 #!/usr/bin/bash
 
 swww init
+sleep 0.5
 swww img $1
