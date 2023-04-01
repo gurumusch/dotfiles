@@ -1,10 +1,16 @@
-(defwidget sdp_launcher [] (box :class "button-bin launcher"
-    (button
-        :class "button launcher"
-        :onclick "${EWW_CONFIG_DIR}/scripts/launcher applauncher"
-        (label :class "icon" :text "󰣇" :halign "center")
-    )
-))
+(defwidget sdp_launcher []
+   (box :class "bar-box launcher"
+      (eventbox :class "button"
+         (box :space-evenly false
+            (button
+               :class "btn launcher"
+               :onclick "${EWW_CONFIG_DIR}/scripts/launcher applauncher"
+               (label :class "icon" :text "󰣇" :halign "center")
+            )
+         )
+      )
+   )
+)
 
 (defwidget sdp_workspaces [] (box :class "button-bin"
     (eventbox :class "button workspaces"
@@ -39,14 +45,14 @@
 ))
 
 (defwidget sdp_brightness []
-   (box :class "button-bin"
+   (box :class "button-bin bar-box"
       (eventbox :class "button brightness"
          (box :space-evenly false
-            (button :class "brightness-bin"
+            (button :class "btn"
                     :onclick "$EWW_CONFIG_DIR/scripts/sd_sound toggle"
                (box :space-evenly false
                   (label :class "icon" :text "󰃠")
-                  (scale :class "slider"
+                  (scale :class "content slider"
                          :min 0
                          :max sd_var_max_brightness
                          :value sd_var_brightness
@@ -62,15 +68,15 @@
 )
 
 (defwidget sdp_volume []
-   (box :class "button-bin"
+   (box :class "bar-box"
       (eventbox :class "button volume"
          (box :space-evenly false
-            (button :class "volume-bin"
+            (button :class "btn"
                     :onclick "$EWW_CONFIG_DIR/scripts/sd_sound toggle"
                (box :space-evenly false
                   (label :visible {sd_var_muted == "off"} :class "icon" :text "󰝟")
                   (label :visible {sd_var_muted == "on"} :class "icon" :text "󰕾")
-                  (scale :class "slider"
+                  (scale :class "content slider"
                          :min 0
                          :max 100
                          :value sd_var_volume
@@ -86,14 +92,14 @@
 )
 
 (defwidget sdp_battery []
-   (box :class "button-bin"
+   (box :class "button-bin bar-box"
       (eventbox :class "button battery"
          (box :space-evenly false
-            (button :class "battery-bin"
+            (button :class "btn"
                     :onclick "$EWW_CONFIG_DIR/scripts/sd_sound toggle"
                (box :space-evenly false
                   (label :class "icon" :text "󰁹")
-                  (box :class "battery-stack"
+                  (box :class "content battery-stack"
                        :orientation "v"
                      (scale :class "slider"
                             :min 0
@@ -119,13 +125,13 @@
 )
 
 (defwidget sdp_wallpaper []
-   (box :class "button-bin"
+   (box :class "bar-box"
       (eventbox :class "button wallpaper"
           (box :space-evenly false
-             (button :class "wallpaper-btn"
+             (button :class "btn"
                      :onclick "~/bin/wallpaper.sh update"
                      :valign "center"
-               (label :text "󰸉")
+               (label :class "icon" :text "󰸉")
             )
          )
       )
@@ -133,10 +139,10 @@
 )
 
 (defwidget sdp_update []
-   (box :class "button-bin"
+   (box :class "bar-box"
       (eventbox :class "button update"
-          (box :space-evenly false
-             (button :class "update-btn ${sd_var_update > 0 ? "pending" : ""}"
+         (box :space-evenly false
+            (button :class "btn ${sd_var_update > 0 ? "pending" : ""}"
                      :onclick "${EWW_CONFIG_DIR}/scripts/sd_update update"
                      :valign "center"
                (label :text "${sd_var_update} ")
@@ -146,13 +152,19 @@
    )
 )
 
-(defwidget sdp_powermenu_button [] (box :class "button-bin powermenu"
-    (button 
-        :class "button powermenu"
-        :onclick "${EWW_CONFIG_DIR}/scripts/launcher toggle_menu sdw_powermenu"
-        (label :class "icon" :text "")
-    )
-))
+(defwidget sdp_powermenu_button []
+   (box :class "bar-box button-bin powermenu"
+      (eventbox :class "button"
+         (box :space-evenly false
+            (button 
+               :class "btn powermenu"
+               :onclick "${EWW_CONFIG_DIR}/scripts/launcher toggle_menu sdw_powermenu"
+               (label :class "icon" :text "")
+            )
+         )
+      )
+   )
+)
 
 (defwidget shephards_bar [] (centerbox
     :class "sdpanel ${active_ws_empty ? "floating" : ""}"
